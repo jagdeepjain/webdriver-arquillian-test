@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="parallel-test" parallel="true">
+	<test name="google-test">
+		<classes>
+			<class name="com.hpe.infosight.test.GoogleTest"/>
+			<class name="com.hpe.infosight.test.GoogleTest2"/>
+			<class name="com.hpe.infosight.test.GoogleTest3"/>
+		</classes>
+	</test>
+</suite>
+

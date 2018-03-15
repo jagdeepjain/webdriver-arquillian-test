@@ -1,0 +1,81 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.jagdeep.example</groupId>
+	<artifactId>arquillian-ui-test</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<name>arquillian-ui-test</name>
+	<url>http://maven.apache.org</url>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.jboss.arquillian</groupId>
+				<artifactId>arquillian-bom</artifactId>
+				<version>1.4.0.Final</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.arquillian.extension</groupId>
+				<artifactId>arquillian-drone-bom</artifactId>
+				<version>2.5.0</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.jboss.arquillian.graphene</groupId>
+			<artifactId>graphene-webdriver</artifactId>
+			<version>2.3.2</version>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.14.2</version>
+			<scope>test</scope>
+		</dependency>
+		<!--dependency> have to diasble this as only one can be run at a time either container or standalone
+			<groupId>org.jboss.arquillian.testng</groupId>
+			<artifactId>arquillian-testng-container</artifactId>
+			<version>1.4.0.Final</version>
+			<scope>test</scope>
+		</dependency-->
+		<dependency>
+			<groupId>org.jboss.arquillian.testng</groupId>
+			<artifactId>arquillian-testng-standalone</artifactId>
+			<version>1.4.0.Final</version>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.0</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.18.1</version>
+				<configuration>
+
+					<printSummary>false</printSummary>
+					<reportsDirectory>./test-output/</reportsDirectory>
+					<suiteXmlFiles>
+						<suiteXmlFile>src/test/resources/google-test.xml</suiteXmlFile>
+						
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
