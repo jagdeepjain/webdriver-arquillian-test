@@ -25,7 +25,6 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.jboss.arquillian.graphene</groupId>
@@ -39,19 +38,12 @@
 			<version>6.14.2</version>
 			<scope>test</scope>
 		</dependency>
-		<!--dependency> have to diasble this as only one can be run at a time either container or standalone
-			<groupId>org.jboss.arquillian.testng</groupId>
-			<artifactId>arquillian-testng-container</artifactId>
-			<version>1.4.0.Final</version>
-			<scope>test</scope>
-		</dependency-->
 		<dependency>
 			<groupId>org.jboss.arquillian.testng</groupId>
 			<artifactId>arquillian-testng-standalone</artifactId>
 			<version>1.4.0.Final</version>
 		</dependency>
 	</dependencies>
-	
 	<build>
 		<plugins>
 			<plugin>
@@ -67,12 +59,10 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.18.1</version>
 				<configuration>
-
 					<printSummary>false</printSummary>
 					<reportsDirectory>./test-output/</reportsDirectory>
 					<suiteXmlFiles>
 						<suiteXmlFile>src/test/resources/google-test.xml</suiteXmlFile>
-						
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
