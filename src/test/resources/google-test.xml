@@ -8,11 +8,8 @@
     <test name="google-test">
         <classes>
             <class name="org.jagdeep.example.arquillian.google.tests.GoogleTest1"/>
-            <class
-                    name="org.jagdeep.example.arquillian.google.tests.GoogleTest2"/>
-            <class
-                    name="org.jagdeep.example.arquillian.google.tests.GoogleTest3"/>
-
+            <class name="org.jagdeep.example.arquillian.google.tests.GoogleTest2"/>
+            <class name="org.jagdeep.example.arquillian.google.tests.GoogleTest3"/>
         </classes>
     </test>
 </suite>

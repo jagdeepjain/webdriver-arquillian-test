@@ -24,7 +24,7 @@ public class GoogleTest4 extends Arquillian {
 
   @Test(groups = "arquillian")
   public void f() {
-    googlePage.goTo();
+    googlePage.go();
     googlePage.searchFor("Jagdeep");
   }
 }

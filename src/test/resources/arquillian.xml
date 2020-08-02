@@ -6,11 +6,10 @@
 
     <extension qualifier="webdriver">
         <property name="browser">chrome</property>
-        <property name="chromeArguments">--disable-extensions --start-maximized
-            --disable-infobars
-        </property>
-        <property name="remoteAddress">http://0.0.0.0:4444/wd/hub</property>
+        <property name="chromeArguments">--disable-extensions --start-maximized --disable-infobars</property>
+        <property name="remoteAddress">http://localhost:4444/wd/hub</property>
         <property name="remoteReusable">true</property>
+        <property name="dimensions">1360x768</property>
     </extension>
 
     <extension qualifier="graphene">
@@ -21,7 +20,7 @@
     </extension>
 
     <extension qualifier="drone">
-        <property name="instantiationTimeoutInSeconds">150</property>
+        <property name="instantiationTimeoutInSeconds">120</property>
     </extension>
 
 </arquillian>
