@@ -15,7 +15,7 @@
                 <artifactId>arquillian-bom</artifactId>
                 <version>1.7.0.Alpha2</version>
                 <type>pom</type>
-                <scope>test</scope>
+                <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.jboss.arquillian.extension</groupId>
@@ -38,7 +38,6 @@
             <artifactId>arquillian-testng-standalone</artifactId>
             <version>1.7.0.Alpha2</version>
         </dependency>
-
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
