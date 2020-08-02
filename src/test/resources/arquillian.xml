@@ -1,21 +1,21 @@
 <arquillian xmlns="http://jboss.com/arquillian" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://jboss.org/schema/arquillian http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
-    
+
     <!-- for properties refer https://docs.jboss.org/author/display/ARQ/Drone  -->
-    
+
     <extension qualifier="webdriver">
         <property name="browser">chrome</property>
         <property name="chromeArguments">--disable-extensions --start-maximized --disable-infobars</property>
-        <property name="remoteReusable">true</property>
-        <property name="remoteAddress">http://192.168.1.6:4444/wd/hub</property>
+        <property name="remoteReusable">false</property>
+        <property name="remoteAddress">http://0.0.0.0:4444/wd/hub</property>
       </extension>
     <extension qualifier="graphene">
         <property name="url">https://www.google.co.in/</property>
-    </extension>    
+    </extension>
     <extension qualifier="reporter">
         <property name="report">html5</property>
     </extension>
- 
+
      <extension qualifier="screenshooter">
         <property name="takeOnEveryAction">true</property>
         <property name="takeBeforeTest">true</property>
