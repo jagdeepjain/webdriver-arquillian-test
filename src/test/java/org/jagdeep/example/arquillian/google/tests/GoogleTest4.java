@@ -16,7 +16,7 @@ public class GoogleTest4 extends Arquillian {
   @Page
   GooglePage googlePage;
 
-  @Deployment
+  @Deployment(testable = false)
   public static JavaArchive createDeployment() {
     return ShrinkWrap.create(JavaArchive.class)
         .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
