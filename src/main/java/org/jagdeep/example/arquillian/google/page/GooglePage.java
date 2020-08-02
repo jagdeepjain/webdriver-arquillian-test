@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.jboss.arquillian.drone.api.annotation.Drone;
-import org.jboss.arquillian.graphene.findby.FindByJQuery;
 import org.jboss.arquillian.test.api.ArquillianResource;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -31,9 +30,8 @@ public class GooglePage {
     }
     
     public void goTo() {
-        driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-        driver.manage().deleteAllCookies();
+        driver.manage().window().maximize();
         driver.get(contextRoot.toString());
     }
     
