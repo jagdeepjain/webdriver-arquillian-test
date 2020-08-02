@@ -6,22 +6,12 @@
     <extension qualifier="webdriver">
         <property name="browser">chrome</property>
         <property name="chromeArguments">--disable-extensions --start-maximized --disable-infobars</property>
-        <property name="remoteReusable">false</property>
+        <property name="remoteReusable">true</property>
         <property name="remoteAddress">http://0.0.0.0:4444/wd/hub</property>
       </extension>
     <extension qualifier="graphene">
         <property name="url">https://www.google.co.in/</property>
+        <property name="waitGuiInterval">30</property>
     </extension>
-    <extension qualifier="reporter">
-        <property name="report">html5</property>
-    </extension>
-
-     <extension qualifier="screenshooter">
-        <property name="takeOnEveryAction">true</property>
-        <property name="takeBeforeTest">true</property>
-        <property name="takeAfterTest">true</property>
-        <property name="takeWhenTestFailed">true</property>
-    </extension>
-    
     
 </arquillian>

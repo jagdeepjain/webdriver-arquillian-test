@@ -25,9 +25,6 @@ public class GooglePage {
     @FindBy(name = "btnG")
     private WebElement searchButton;
  
-    @FindByJQuery(".rc")
-    private List <WebElement> results;
- 
     public void searchFor(String searchQuery) {
         searchBox.sendKeys(searchQuery);
         System.out.println("Test Ran fine.");
@@ -35,7 +32,7 @@ public class GooglePage {
     
     public void goTo() {
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         driver.manage().deleteAllCookies();
         driver.get(contextRoot.toString());
     }
