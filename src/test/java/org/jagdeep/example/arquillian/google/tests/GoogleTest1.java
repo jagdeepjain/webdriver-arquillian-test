@@ -16,6 +16,7 @@ public class GoogleTest1 extends Arquillian {
   GooglePage googlePage;
 
   @Test(priority = 1)
+  @BeforeTest(groups = "arquillian", inheritGroups = true)
   public void f() {
     googlePage.goTo();
     googlePage.searchFor("Jagdeep");
