@@ -1,30 +1,29 @@
 package org.jagdeep.example.arquillian.google.tests;
 
 import org.jagdeep.example.arquillian.google.page.GooglePage;
-import org.jboss.arquillian.container.test.api.Deployment;
-import org.jboss.arquillian.graphene.page.Page;
-import org.jboss.arquillian.testng.Arquillian;
-import org.jboss.shrinkwrap.api.ShrinkWrap;
-import org.jboss.shrinkwrap.api.asset.EmptyAsset;
-import org.jboss.shrinkwrap.api.spec.JavaArchive;
-import org.testng.annotations.BeforeTest;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class GoogleTest3 extends Arquillian {
-	
-  @Page
-  GooglePage googlePage;
+import java.net.MalformedURLException;
+import java.net.URL;
 
-  @Deployment
-  public static JavaArchive createDeployment() {
-    return ShrinkWrap.create(JavaArchive.class)
-        .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
-  }
+public class GoogleTest3 {
 
   @Test(priority = 1)
-  @BeforeTest(groups = "arquillian", inheritGroups = true)
-  public void f() {
+  public void f() throws MalformedURLException {
+    RemoteWebDriver driver = new RemoteWebDriver(new URL("http://0.0.0" +
+        ".0:4444/wd/hub"), new ChromeOptions());
+    GooglePage googlePage = new GooglePage(driver);
+
     googlePage.goTo();
     googlePage.searchFor("Jagdeep");
+
+    Assert.assertEquals("Google1", driver.getTitle());
+
+    System.out.println("Test Ran from GoogleTest3.");
+
+    driver.close();
   }
 }

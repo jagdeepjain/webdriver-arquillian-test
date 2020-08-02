@@ -1,32 +1,27 @@
 package org.jagdeep.example.arquillian.google.page;
 
-import java.net.URL;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import org.jboss.arquillian.drone.api.annotation.Drone;
-import org.jboss.arquillian.graphene.findby.FindByJQuery;
-import org.jboss.arquillian.test.api.ArquillianResource;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.PageFactory;
 
 public class GooglePage {
-	
-	@Drone
-    private RemoteWebDriver driver;
-	
-	@ArquillianResource
-    private URL contextRoot;
-	
+
+    public GooglePage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
+
+    private WebDriver driver;
     @FindBy(name = "q")
+
     private WebElement searchBox;
  
     @FindBy(name = "btnG")
     private WebElement searchButton;
- 
-    @FindByJQuery(".rc")
-    private List <WebElement> results;
  
     public void searchFor(String searchQuery) {
         searchBox.sendKeys(searchQuery);
@@ -37,7 +32,7 @@ public class GooglePage {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().deleteAllCookies();
-        driver.get(contextRoot.toString());
+        driver.get("https://www.google.co.in/");
     }
     
 }
