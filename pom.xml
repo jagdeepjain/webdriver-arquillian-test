@@ -45,7 +45,6 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>src/test/resources/google-test.xml</suiteXmlFile>
 					</suiteXmlFiles>
-					<testFailureIgnore>true</testFailureIgnore>
 				</configuration>
 			</plugin>
 		</plugins>
