@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 @RunAsClient
 public class GoogleTest2 extends Arquillian {
-	
+
   @Page
   GooglePage googlePage;
 

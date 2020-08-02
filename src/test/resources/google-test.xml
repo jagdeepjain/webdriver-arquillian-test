@@ -1,19 +1,19 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="parallel-test" parallel="classes" thread-count = "2">
-	<groups>
-		<run>
-			<include name="arquillian" />
-		</run>
-	</groups>
-	<test name="google-test">
-		<classes>
-			<class name="org.jagdeep.example.arquillian.google.tests.GoogleTest1"/>
-			<class
-					name="org.jagdeep.example.arquillian.google.tests.GoogleTest2"/>
-			<class
-					name="org.jagdeep.example.arquillian.google.tests.GoogleTest3"/>
+<suite name="parallel-test" parallel="classes" thread-count="2">
+    <groups>
+        <run>
+            <include name="arquillian"/>
+        </run>
+    </groups>
+    <test name="google-test">
+        <classes>
+            <class name="org.jagdeep.example.arquillian.google.tests.GoogleTest1"/>
+            <class
+                    name="org.jagdeep.example.arquillian.google.tests.GoogleTest2"/>
+            <class
+                    name="org.jagdeep.example.arquillian.google.tests.GoogleTest3"/>
 
-		</classes>
-	</test>
+        </classes>
+    </test>
 </suite>
 
