@@ -13,10 +13,14 @@
     </extension>
 
     <extension qualifier="graphene">
-        <property name="url">https://www.google.co.in/</property>
         <property name="waitGuiInterval">60</property>
         <property name="waitAjaxInterval">60</property>
         <property name="waitModelInterval">60</property>
+    </extension>
+
+    <extension qualifier="cubedrone">
+        <property name="recordingMode">NONE</property>
+        <property name="containerNameStrategy">RANDOM</property>
     </extension>
 
     <extension qualifier="drone">
