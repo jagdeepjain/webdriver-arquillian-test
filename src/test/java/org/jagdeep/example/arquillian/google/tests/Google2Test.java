@@ -42,6 +42,7 @@ public class Google2Test {
   }
 
   public void go() {
+    System.out.println(contextRoot.toString());
     driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     driver.manage().window().maximize();
     driver.get("https://google.co.in");
